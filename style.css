@@ -1,0 +1,201 @@
+@font-face{font-family:'Montserrat';src:url('assets/fonts/montserrat-500.ttf') format('truetype');font-weight:500;font-display:swap}
+@font-face{font-family:'Cormorant Garamond';src:url('assets/fonts/cormorant-garamond-400.ttf') format('truetype');font-weight:400;font-display:swap}
+@font-face{font-family:'Cormorant Garamond';src:url('assets/fonts/cormorant-garamond-500.ttf') format('truetype');font-weight:500;font-display:swap}
+@font-face{font-family:'Cormorant Garamond';src:url('assets/fonts/cormorant-garamond-600.ttf') format('truetype');font-weight:600;font-display:swap}
+@font-face{font-family:'Montserrat';src:url('assets/fonts/montserrat-400.ttf') format('truetype');font-weight:400;font-display:swap}
+@font-face{font-family:'Montserrat';src:url('assets/fonts/montserrat-600.ttf') format('truetype');font-weight:600;font-display:swap}
+:root{color-scheme:light;--base:#8F77B5;--accent:#6A4C9C;--plum:#66327C;--bg:#f5f2f7;--text:#35293e;--muted:#6c6274;--sans:'Montserrat',Arial,sans-serif;--display:'Cormorant Garamond',Georgia,serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:32px}
+body{margin:0;background:var(--bg);color:var(--text);font:600 1rem/1.9 var(--sans);isolation:isolate}
+body::before{content:'';position:fixed;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(ellipse at 90% 5%,#8f77b529,transparent 54%),radial-gradient(ellipse at 0% 60%,#66327c0d,transparent 48%),radial-gradient(ellipse at 55% 95%,#8f77b520,transparent 60%)}
+body::after{content:'';position:fixed;inset:0;z-index:5;pointer-events:none;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23000' filter='url(%23n)' opacity='.6' d='M0 0h180v180H0z'/%3E%3C/svg%3E")}
+a{color:inherit;text-decoration:none;transition:color .25s,opacity .25s}
+a:hover{color:var(--plum)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:7px;border-radius:8px}
+::selection{background:#8f77b540;color:var(--plum)}
+.skip-link{position:fixed;top:-100px;left:1rem;padding:.5rem 1rem;background:var(--bg);z-index:10}
+.skip-link:focus{top:1rem}
+.header{max-width:1440px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:30px;padding:30px 7%}
+.wordmark{font-family:var(--display);font-size:2.4rem;font-weight:600;letter-spacing:-.08em;color:var(--plum);line-height:1}
+.header nav{display:flex;flex-wrap:wrap;gap:34px;font-size:.875rem}
+.header nav a{padding:8px 0}
+.hero{position:relative;max-width:1440px;margin:0 auto;min-height:min(850px,calc(100svh - 104px));padding:62px 9% 94px;display:grid;grid-template-columns:1.12fr 1fr;gap:7%;align-items:center}
+.hero-copy{grid-column:1;grid-row:1;position:relative;z-index:1}
+.eyebrow{margin:0 0 26px;color:var(--accent);font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;line-height:1.7}
+.hero .eyebrow{letter-spacing:.13em;margin-bottom:22px}
+
+.hero h1{font-family:var(--display);font-size:clamp(5.5rem,10.5vw,10rem);font-weight:600;line-height:.95;letter-spacing:-.035em;margin:0 0 34px}
+.hero h1 span{color:var(--plum);display:inline-block;margin-left:.23em}
+.hero-statement{font-family:var(--display);font-size:1.65rem;font-weight:500;line-height:1.4;max-width:380px;margin:0 0 24px;color:var(--muted)}
+.hero-actions{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.hero-photo{grid-column:2;grid-row:1;position:relative;width:100%;margin:28px 0 0;align-self:center}
+.hero-photo::before{content:'';position:absolute;width:120%;height:115%;left:-16%;top:-7%;z-index:-1;opacity:.7;background:radial-gradient(ellipse,#8f77b544,transparent 68%)}
+.hero-photo img{display:block;width:100%;height:clamp(380px,40vw,540px);object-fit:cover;object-position:52% 30%;border-radius:46% 54% 44% 56% / 50% 41% 59% 50%;filter:saturate(.55) contrast(.92)}
+.hero-photo figcaption{font-size:.75rem;line-height:1.7;color:var(--muted);text-align:center;margin:18px 16px 0}
+.text-link,.button{display:inline-flex;align-items:center;min-height:44px;padding:8px 0;color:var(--accent);font-size:.875rem;font-weight:600;line-height:1.7;letter-spacing:.015em}
+.button{color:var(--plum)}
+.text-link:hover,.button:hover{opacity:.65}
+.section{max-width:1280px;margin:0 auto;padding:108px 8%}
+h2{font:600 clamp(2.9rem,5vw,4.6rem)/1.06 var(--display);letter-spacing:-.025em;margin:0}
+h3{font:600 1.75rem/1.25 var(--display);letter-spacing:-.01em;margin:0 0 14px}
+p{margin:0 0 22px}
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:11%;padding-top:80px;padding-bottom:120px}
+.about .section-label{padding-top:10px}
+.about-copy p{color:var(--muted)}
+.about-copy .lead{font:600 1.8rem/1.5 var(--display);color:var(--text);margin-bottom:28px}
+.about-details{display:grid;grid-template-columns:1fr 1fr;gap:35px;margin-top:45px}
+.about-details .detail-label{color:var(--accent);font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.about-details p{font-size:.875rem;margin:0}
+.academic{position:relative;padding-top:125px;padding-bottom:120px}
+.academic::before{content:'';position:absolute;inset:5% -4%;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 72% 45%,#8f77b51a,transparent 65%)}
+.section-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:35px;margin-bottom:74px}
+.section-note{font-size:.875rem;color:var(--muted);margin:0 0 7px}
+.academic-grid{display:grid;grid-template-columns:1fr 1fr;gap:11%;align-items:start}
+.education-entry{margin-bottom:50px}
+.education-entry:last-child{margin-bottom:0}
+.entry-label{font-size:.75rem;color:var(--accent);letter-spacing:.035em;margin:0 0 14px;line-height:1.75}
+.education-entry p:not(.entry-label),.thesis>p:not(.entry-label){color:var(--muted);font-size:1rem;line-height:1.9;margin-bottom:14px}
+.thesis{padding:44px 0 0}
+.thesis h3{color:var(--plum);font:600 clamp(2.5rem,3.6vw,3.4rem)/1.09 var(--display);margin-bottom:22px}
+.thesis .thesis-subtitle{font:600 1.4rem/1.4 var(--display);color:var(--text);margin-bottom:28px}
+.thesis .button{margin-top:14px}
+.research-tags{display:flex;flex-wrap:wrap;gap:10px 23px;list-style:none;padding:0;margin:28px 0 0;color:var(--muted);font-size:.75rem}
+.professional{padding-top:90px;padding-bottom:90px}
+.highlight-row{display:grid;grid-template-columns:70px 1fr 210px;gap:35px;padding:27px 0 40px;align-items:center}
+.year{color:var(--accent);font-size:.875rem;align-self:start;padding-top:8px}
+.highlight-row h3{font:600 2.3rem/1.2 var(--display);margin-bottom:10px}
+.highlight-row p{font-size:.875rem;color:var(--muted);margin:0}
+.highlight-row:hover h3{color:var(--plum)}
+.achievement{display:flex;flex-direction:column;gap:10px;text-align:right;color:var(--plum)}
+.achievement strong{font:600 3.5rem/1 var(--display);letter-spacing:-.025em}
+.achievement strong span{font-size:1.5rem;margin-left:3px}
+.achievement>span{font-size:.75rem;color:var(--muted);line-height:1.7}
+.connect{position:relative;text-align:center;padding-top:135px;padding-bottom:145px}
+.connect::before{content:'';position:absolute;inset:0 -5%;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 50% 55%,#8f77b522,transparent 65%)}
+.connect h2{font-size:clamp(4rem,7vw,6.5rem);color:var(--plum);font-weight:400;margin-bottom:28px}
+.connect>p:not(.eyebrow){color:var(--muted);font-size:1rem}
+.socials{display:flex;justify-content:center;gap:44px;list-style:none;padding:0;margin:28px 0 0}
+.socials a{color:var(--accent);font-size:1rem;display:inline-block;padding:10px 0;min-height:44px}
+.socials a:hover{color:var(--plum);opacity:.7}
+.footer{display:flex;justify-content:space-between;align-items:center;gap:25px;max-width:1440px;margin:0 auto;padding:30px 7% 45px}
+.footer>p{font:600 2.2rem/1.1 var(--display);margin:0}
+.footer>p span{color:var(--plum)}
+.footer .text-link{font-weight:400;color:var(--muted)}
+@media(min-width:1600px){.hero{min-height:800px}}
+@media(max-width:1000px){.header{padding:28px 6%}.header nav{gap:24px}.hero{padding:64px 7% 80px;gap:6%;min-height:650px}.hero h1{font-size:7rem}.hero .eyebrow{font-size:.75rem;max-width:260px}.hero-photo img{height:450px}.hero-statement{font-size:1.5rem}.hero-actions{gap:15px}.section{padding-left:7%;padding-right:7%}.academic-grid{gap:8%}.highlight-row{grid-template-columns:55px 1fr 175px;gap:22px}}
+@media(max-width:680px){.header{align-items:flex-start;padding:24px 7%;gap:15px}.wordmark{font-size:2rem}.header nav{gap:8px 20px;max-width:230px;justify-content:flex-end;font-size:.875rem}.header nav a{padding:0}.hero{min-height:auto;padding:50px 9% 64px;grid-template-columns:1fr;gap:42px}.hero-copy{grid-column:1;grid-row:1}.hero h1{font-size:clamp(5.8rem,23vw,8rem);margin-bottom:28px}.hero .eyebrow{max-width:none;letter-spacing:.08em;margin-bottom:20px}.hero-statement{font-size:1.6rem;max-width:300px}.hero-actions{gap:24px}.hero-photo{grid-column:1;grid-row:2;width:85%;max-width:400px;margin:0 0 0 auto}.hero-photo img{height:clamp(350px,100vw,480px)}.hero-photo figcaption{font-size:.75rem;margin-top:14px}.section{padding:72px 9%}.about,.academic-grid{grid-template-columns:1fr;gap:44px}.about .section-label{padding:0}h2{font-size:3.2rem}.about-copy .lead{font-size:1.7rem}.about-details{gap:24px;margin-top:32px}.section-heading{flex-direction:column;align-items:flex-start;gap:22px;margin-bottom:46px}.section-note{font-size:.875rem}.education-entry{margin-bottom:38px}.thesis{padding-top:12px}.thesis h3{font-size:2.9rem}.academic::before,.connect::before{inset:0}.highlight-row{grid-template-columns:1fr 110px;gap:12px 16px;padding:16px 0 38px}.year{grid-column:1/-1;padding-top:0}.highlight-row h3{font-size:1.9rem}.highlight-row p{font-size:.875rem}.achievement strong{font-size:2.5rem}.achievement>span{font-size:.75rem}.connect{padding-top:90px;padding-bottom:100px}.connect h2{font-size:4.3rem}.footer{padding:25px 9% 35px}.footer>p{font-size:1.9rem}.footer .text-link{font-size:.875rem}.socials{gap:36px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}a{transition:none}}
+
+/* Editorial hierarchy: current research, paired education, and work at origin. */
+.hero h1 .given-name{color:var(--accent);margin-left:0}
+.hero h1 .family-name{color:#19171a}
+.footer>p .given-name{color:var(--accent)}
+.footer>p .family-name{color:#19171a}
+.header nav{font-weight:600}
+.about-copy .origin-story{font:600 1.5rem/1.6 var(--display);color:var(--muted)}
+.about-details .detail-label{font-size:.875rem;font-weight:600;letter-spacing:.025em;text-transform:none}
+.about-details p:not(.detail-label){font-weight:600}
+.section-note{font-weight:600}
+.entry-label{font-weight:600}
+.academic-current{display:grid;grid-template-columns:1fr 1.1fr;gap:9%;padding:10px 0 90px;align-items:start}
+.current-label{color:var(--plum)}
+.current-study h3{font:600 clamp(2.7rem,4.7vw,4.2rem)/1.05 var(--display);color:var(--plum);margin-bottom:24px}
+.current-study .degree{font:600 2rem/1.25 var(--display);color:var(--text);margin-bottom:18px}
+.current-study>p:not(.degree):not(.entry-label){font-size:.875rem;color:var(--muted)}
+.research-role h3{font-size:2rem;margin-bottom:14px}
+.research-role .affiliation{font-size:.875rem;color:var(--muted);margin-bottom:25px}
+.role-mission{font:600 1.6rem/1.45 var(--display);color:var(--plum)}
+.responsibilities{padding:0 0 0 1.15rem;margin:24px 0 0;line-height:1.9;color:var(--muted);font-size:1rem}
+.responsibilities li{padding-left:7px;margin-bottom:15px}
+.responsibilities li:last-child{margin-bottom:0}
+.responsibilities li::marker{color:var(--base);font-size:.85em}
+.academic-history{display:grid;grid-template-columns:1fr 1.1fr;gap:9%;align-items:start;padding-top:25px}
+.academic-history .education-entry,.academic-history .thesis{padding-top:0;margin-bottom:0}
+.academic-history .entry-label{margin-bottom:22px}
+.academic-history .education-entry h3{font-size:2.1rem}
+.academic-history .thesis h3{font-size:2.4rem}
+.awards{padding-top:90px}
+.awards>h3{font:600 2.5rem/1.15 var(--display);margin-bottom:40px}
+.award-list{display:grid;gap:30px}
+.award{display:grid;grid-template-columns:150px 1fr;gap:35px;align-items:start}
+.award .entry-label{margin:7px 0 0}
+.award h4{font:600 1.7rem/1.3 var(--display);margin:0 0 8px}
+.award p:not(.entry-label){color:var(--muted);font-size:.875rem;margin:0;max-width:650px}
+.farm-experience{display:grid;grid-template-columns:.9fr 1.1fr;gap:11%;padding-top:90px;padding-bottom:125px}
+.farm-story h3{font-size:2.5rem;color:var(--plum)}
+.farm-lead{font:600 1.6rem/1.5 var(--display);margin-bottom:28px}
+.farm-connection{font:600 1.4rem/1.5 var(--display);color:var(--plum);margin:30px 0 0}
+.main-role{margin-bottom:80px}
+.role-heading{display:grid;grid-template-columns:1fr 1.1fr;gap:9%;align-items:end;margin-bottom:42px}
+.main-role h3{font:600 clamp(2.8rem,5vw,4.5rem)/1.05 var(--display);color:var(--plum);margin:0}
+.role-intro{font:600 1.85rem/1.4 var(--display);margin:0 0 4px;color:var(--muted)}
+.onyx-responsibilities{display:grid;grid-template-columns:1fr 1fr;gap:25px 9%;list-style:none;padding:0}
+.onyx-responsibilities li{padding:0;margin:0}
+.onyx-responsibilities strong{display:block;color:var(--text);font:600 1.65rem/1.25 var(--display);margin-bottom:12px}
+.supporting-role{max-width:780px;margin:0 0 85px}
+.supporting-role h3{font-size:2.35rem;margin-bottom:24px}
+.supporting-role>p:not(.entry-label){color:var(--muted)}
+.competitions{margin-bottom:80px}
+.competitions>h3{font:600 2.5rem/1.15 var(--display);margin-bottom:24px}
+.highlight-row h4{font:600 2.15rem/1.2 var(--display);margin:0 0 10px}
+.press-feature{max-width:760px}
+.press-feature h3{font-size:2.3rem}
+.press-feature>p:not(.entry-label){color:var(--muted)}
+.connect h2{font-weight:600}
+@media(max-width:680px){
+ .header nav{max-width:235px;gap:9px 18px}
+ .hero h1{font-size:clamp(5.1rem,22vw,7.5rem)}
+ .hero h1 .family-name{margin-left:.15em}
+ .about-copy .origin-story{font-size:1.4rem}
+ .academic-current,.academic-history,.farm-experience,.role-heading{grid-template-columns:1fr;gap:42px}
+ .academic-current{padding:0 0 62px}
+ .current-study h3{font-size:3.3rem}
+ .current-study .degree{font-size:1.9rem}
+ .academic-history{padding-top:10px}
+ .academic-history .education-entry h3{font-size:2rem}
+ .academic-history .thesis h3{font-size:2.6rem}
+ .awards{padding-top:65px}
+ .award{grid-template-columns:1fr;gap:10px}
+ .award .entry-label{margin:0}
+ .award-list{gap:32px}
+ .award h4{font-size:1.6rem}
+ .farm-experience{padding-top:80px;padding-bottom:90px}
+ .role-heading{gap:28px}
+ .role-intro{font-size:1.7rem}
+ .onyx-responsibilities{grid-template-columns:1fr;gap:26px}
+ .main-role{margin-bottom:65px}
+ .supporting-role h3{font-size:2.05rem}
+ .highlight-row h4{font-size:1.85rem}
+ .achievement strong{font-size:2.35rem}
+ .press-feature h3{font-size:2.05rem}
+ .connect h2{font-size:3.8rem}
+}
+
+.main-role .employer{font:600 1.8rem/1.3 var(--display);color:var(--text);margin:22px 0 0}
+
+/* Balanced alignment and titles without forced line breaks. */
+.hero-statement{max-width:none;white-space:nowrap;font-weight:600;font-size:clamp(1.05rem,1.85vw,1.65rem)}
+.about{grid-template-columns:1fr 1fr;gap:8%;align-items:start}
+.about .section-label{padding-top:0}
+.about h2{font-size:clamp(2.2rem,3.7vw,3.4rem);line-height:1.15}
+.about h2 span{display:block;white-space:nowrap}
+.about-copy .lead,.about-copy .origin-story{text-align:justify;hyphens:none}
+.about-details{text-align:left}
+.current-study h3{white-space:nowrap;font-size:clamp(1.45rem,3vw,2.7rem)}
+.role-heading{display:block}
+.main-role h3{font-size:clamp(1.65rem,4.5vw,4rem);white-space:nowrap}
+.role-intro{max-width:660px;margin-top:30px}
+.supporting-role{max-width:none}
+.supporting-role h3{font-size:clamp(.7rem,2.55vw,2.3rem);white-space:nowrap}
+.degree-details{margin:20px 0 0;font-size:1rem;line-height:1.8}
+.degree-details>div{margin-bottom:18px}
+.degree-details dt{font-weight:600;color:var(--text);margin-bottom:3px}
+.degree-details dd{margin:0;color:var(--muted)}
+.academic::before{inset:5% 0}
+.connect::before{inset:0}
+.hero-photo::before{width:116%}
+@media(max-width:680px){.about{grid-template-columns:1fr;gap:36px}.hero-statement{font-size:clamp(1.05rem,4.3vw,1.4rem)}.current-study h3{font-size:clamp(1.45rem,6.9vw,2.2rem)}.main-role h3{font-size:clamp(1.65rem,7.8vw,2.6rem)}.role-intro{margin-top:26px}.supporting-role h3{font-size:clamp(.7rem,3.4vw,1.75rem);white-space:nowrap;text-wrap:nowrap}}
+
+.company-link{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em;text-decoration-skip-ink:auto}
+.contact-email a{display:inline-block;padding:8px 0;color:var(--accent);text-decoration:underline;text-underline-offset:.2em}
